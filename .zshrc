@@ -121,3 +121,23 @@ alias rubymine="~/Downloads/RubyMine-2019.3.1/bin/rubymine.sh &"
 alias mc=". /usr/share/mc/bin/mc-wrapper.sh"
 alias g="git"
 
+editZsh (){
+	updateYadm
+	vim ~/.zshrc
+	source ~/.zshrc
+	pushZshToYadm
+}
+
+pushZshToYadm (){
+	yadm add ~/.zshrc
+	yadm commit -m "update .zshrc"
+	yadm push
+	echo "Pushed new zshrc to yadm"
+}
+
+
+updateYadm () {
+	yadm pull
+}
+
+
