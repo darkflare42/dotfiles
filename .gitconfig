@@ -1,0 +1,28 @@
+[user]
+	email = or.keren@checkmarx.com
+	name = Or Keren
+
+[alias]
+	co	= checkout
+	coa	= !git add -A && git commit -m
+	st	= status
+	cm	= commit -m
+	c	= commit
+	branches	= branch -a
+	tags	= tag
+	stashes	= stash list
+	unstage	= reset -q HEAD --
+	discard	= checkout --
+	uncommit	= reset --mixed HEAD~
+	amend	= commit --amend
+	nevermind	= !git reset --hard HEAD && git clean -d -f
+	graph	= log --graph -10 --branches --remotes --tags  --format=format:'%Cgreen%h %Creset• %<(75,trunc)%s (%cN, %cr) %Cred%d' --date-order
+	precommit	= diff --cached --diff-algorithm=minimal -w
+	unmerged	= diff --name-only --diff-filter=U
+	remotes	= remote -v
+	la	= "!git config -l | grep alias | cut -c 7-"
+	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+	ec = commit --allow-empty -m \"empty commit to trigger something\"
+	nccommit = commit -a --allow-empty-message -m \"\"
+[push]
+	default = current
