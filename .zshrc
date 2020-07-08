@@ -5,11 +5,12 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/ork@dm.cx/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -88,6 +89,8 @@ plugins=(
 	zsh-syntax-highlighting
 )
 
+ZSH_DISABLE_COMPFIX="true"
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -132,6 +135,8 @@ export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}
 alias rubymine="~/Downloads/RubyMine-2019.3.1/bin/rubymine.sh &"
 alias mc=". /usr/share/mc/bin/mc-wrapper.sh"
 alias g="git"
+
+[ -f ~/scripts/.kubectl_aliases ] && source ~/scripts/.kubectl_aliases
 
 editZsh (){
 	updateYadm
