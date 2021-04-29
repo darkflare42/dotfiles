@@ -5,6 +5,7 @@
 [alias]
 	co	= checkout
 	coa	= !git add -A && git commit -m
+	coap	= "!f() { git add -A && git commit -m \"$@\" && git push; }; f"
 	st	= status
 	cm	= commit -m
 	c	= commit
@@ -26,3 +27,10 @@
 	nccommit = commit -a --allow-empty-message -m \"\"
 [push]
 	default = current
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[pull]
+	rebase = false
