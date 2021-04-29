@@ -132,6 +132,16 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0
 
+#Automation Shit
+export JAVA_HOME=$(/usr/libexec/java_home)
+export M2_HOME=~/Projects/playground/automation/apache-maven-3.6.1
+export CB_DEFAULT_USERNAME=ork@mailinator.com
+export CB_DEFAULT_PASSWORD=Admin123
+export CB_ADMIN_USERNAME=orkerencx@mailinator.com
+export CB_ADMIN_PASSWORD=Admin123
+export PATH=$PATH:$JAVA_HOME/bin/
+export PATH=$PATH:$M2_HOME/bin/
+
 alias rubymine="~/Downloads/RubyMine-2019.3.1/bin/rubymine.sh &"
 alias mc=". /usr/share/mc/bin/mc-wrapper.sh"
 alias g="git"
@@ -159,3 +169,4 @@ updateYadm () {
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+export PATH="/usr/local/opt/awscli@1/bin:$PATH"
