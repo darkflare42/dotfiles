@@ -130,20 +130,25 @@ eval "$(nodenv init -)"
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
 
-#Automation Shit
+
+#JAVA
 export JAVA_HOME=$(/usr/libexec/java_home)
-export M2_HOME=~/Projects/playground/automation/apache-maven-3.6.1
-export CB_DEFAULT_USERNAME=ork@mailinator.com
-export CB_DEFAULT_PASSWORD=Admin123
-export CB_ADMIN_USERNAME=orkerencx@mailinator.com
-export CB_ADMIN_PASSWORD=Admin123
 export PATH=$PATH:$JAVA_HOME/bin/
 export PATH=$PATH:$M2_HOME/bin/
 
-alias rubymine="~/Downloads/RubyMine-2019.3.1/bin/rubymine.sh &"
-alias mc=". /usr/share/mc/bin/mc-wrapper.sh"
 alias g="git"
+
+# DOG
+export IMPLISIT_HOME=~/Projects/implisit
+alias dog="~/Projects/implisit/dog.sh"
+
+# GPG Signing
+export GPG_TTY=$(tty)
 
 [ -f ~/scripts/.kubectl_aliases ] && source ~/scripts/.kubectl_aliases
 
