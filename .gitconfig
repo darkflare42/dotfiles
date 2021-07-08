@@ -1,6 +1,7 @@
 [user]
 	email = okeren@salesforce.com
 	name = Or Keren
+	signingKey = B56FC531821ACDEA3A8B931F261E8CCD735AFAA8
 
 [alias]
 	co	= checkout
@@ -34,3 +35,9 @@
 	required = true
 [pull]
 	rebase = false
+[gpg]
+	program = /usr/local/bin/gpg
+[commit]
+	gpgsign = true
+[tag]
+	forceSignAnnotated = true
